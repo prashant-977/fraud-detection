@@ -42,7 +42,7 @@ This platform addresses both by:
 | `scoring_worker.py` | `fraud_ml` Conda env | Standalone real-time inference worker. Maintains a cached Parquet RFM feature lookup, polls PostgreSQL for unscored rows (`fraud_probability IS NULL`), scores them with LightGBM, and flags high-risk alerts (`is_high_risk = TRUE`). |
 | `fraud_agent_worker.py` | `fraud_ml` Conda env | Autonomous AI Investigator. Polls PostgreSQL for flagged high-risk rows (`agent_summary IS NULL`), calls the Gemini API (`gemini-2.5-flash`) with structured JSON output, and persists `agent_recommendation` and `agent_summary`. |
 
-PS: conda and fraud_ml are conda environments created in the local machine. 
+## PS: spark and fraud_ml are conda environments created in the local machine. 
 
 ## 3. Core Methodologies & Engineering Decisions
 
